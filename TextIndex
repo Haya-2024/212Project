@@ -1,8 +1,8 @@
-public class index{
+public class TextIndex{
 
 LinkedList<Document> all_doc;
 
-public index (){
+public TextIndex(){
 all_doc=new LinkedList<Document>() ;
 }
 public void add_Document (Document d){
@@ -30,7 +30,7 @@ System.out.println("ID:"+doc.id);
 doc.words.display ();
 // System_out.printin ("all words in this dos are:");
 }
-
+/*
 public static void main(String args[]){
 index ind1=new index();
 LinkedList<String> words = new LinkedList<String>();
@@ -45,7 +45,5 @@ Document d2 = new Document(2,words2);
 ind1.add_Document(d2);
 ind1.displayDocuments();
 
-
-
-}
+}*/
 }
