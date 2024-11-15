@@ -1,0 +1,51 @@
+public class index{
+
+LinkedList<Document> all_doc;
+
+public index (){
+all_doc=new LinkedList<Document>() ;
+}
+public void add_Document (Document d){
+all_doc.insert(d);
+}
+/////helpping methods//
+public void displayDocuments(){
+if (all_doc.empty ()) {
+System.out.println ("Empty docs");
+return;
+}
+
+all_doc.findFirst();
+while (!all_doc.last ()) {
+Document doc = all_doc.retrieve();
+System.out.println ("\n----------------------");
+System.out.println("ID:"+doc.id);
+//System.out.printin("all words in this doc are") ;
+doc.words.display ();
+all_doc.findNext () ;
+}
+Document doc = all_doc.retrieve ();
+System.out.println ("\n----------------------");
+System.out.println("ID:"+doc.id);
+doc.words.display ();
+// System_out.printin ("all words in this dos are:");
+}
+
+public static void main(String args[]){
+index ind1=new index();
+LinkedList<String> words = new LinkedList<String>();
+words.insert("National");
+words.insert("flag");
+Document d1 = new Document(1,words);
+ind1.add_Document(d1);
+LinkedList<String> words2 = new LinkedList<String>();
+words2.insert("hello");
+words2.insert("there");
+Document d2 = new Document(2,words2);
+ind1.add_Document(d2);
+ind1.displayDocuments();
+
+
+
+}
+}
