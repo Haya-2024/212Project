@@ -1,7 +1,7 @@
-public class InvertedIndex
+public class WordInvertedIndex
 {
 LinkedList<word>inverted_index;
-public InvertedIndex ()
+public WordInvertedIndex ()
 {
 inverted_index=new LinkedList<word> () ;
 
@@ -41,7 +41,7 @@ public void display_inverted_index () {
 if (inverted_index==null) {
 System.out.println ("null inverted index");
 return;}
-else if (inverted_index.empty() )
+else if (inverted_index.empty())
 {
 System.out.println ("empty inverted index");
 return;
