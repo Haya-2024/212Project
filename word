@@ -1,0 +1,38 @@
+public class word{
+String text;
+LinkedList<Integer> doc_IDs;
+
+public word(String w){
+text =w;
+doc_IDs= new LinkedList<Integer> ();
+}
+
+public void add_ID(int id){
+if(!existIn_docIDs(id))
+doc_IDs.insert(id);
+}
+
+public boolean existIn_docIDs(Integer id){
+if (doc_IDs.empty ()) return false;
+doc_IDs.findFirst ();
+while (!doc_IDs.last ()) {
+if (doc_IDs.retrieve().equals(id))
+return true;
+doc_IDs.findNext () ;
+}
+if (doc_IDs.retrieve().equals (id) ){
+return true;
+}
+return false;
+}
+
+public void display(){
+System.out.println ("\n-----------------------------");
+System.out.println ("Word:"+ text);
+System.out.println ("[");
+doc_IDs.display();
+System.out.println ("]");
+}
+
+
+}
