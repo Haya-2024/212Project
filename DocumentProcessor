@@ -100,7 +100,7 @@ public class DocumentProcessor {
     // Main method
     public static void main(String[] args) {
         DocumentProcessor processor = new DocumentProcessor();
-        processor.loadFiles("stop.txt", "dataset1.csv");
+        processor.loadFiles("stop.txt", "dataset.csv");
         processor.docIndex.displayDocuments();
         processor.wordIndex.display_inverted_index();
     }
