@@ -1,0 +1,57 @@
+public class InvertedIndex
+{
+LinkedList<word>inverted_index;
+public InvertedIndex ()
+{
+inverted_index=new LinkedList<word> () ;
+
+}
+public void add (String text, int id)
+{
+if (!search_word (text)) {
+word w=new word (text);
+w.add_ID(id);
+//w.doc_IDs.insert(id); //can i use add from word class
+inverted_index.insert(w);
+}
+else {
+word existing_word = inverted_index.retrieve () ;
+existing_word.add_ID(id);
+// existing word.doc IDS.insert (id);
+}
+}
+
+public boolean search_word(String W) {
+if (inverted_index==null || inverted_index.empty())
+return false;
+inverted_index.findFirst();
+while (!inverted_index.last()){
+if (inverted_index.retrieve().text.equals(W)) 
+return true;
+
+inverted_index.findNext () ;
+}
+if (inverted_index.retrieve().equals(W))
+return true;
+
+return false;
+}
+
+public void display_inverted_index () {
+if (inverted_index==null) {
+System.out.println ("null inverted index");
+return;}
+else if (inverted_index.empty() )
+{
+System.out.println ("empty inverted index");
+return;
+}
+
+inverted_index.findFirst();
+while (!inverted_index.last()) {
+inverted_index.retrieve().display ();
+inverted_index.findNext ();
+}
+inverted_index.retrieve().display ();//for last node
+}
+}
